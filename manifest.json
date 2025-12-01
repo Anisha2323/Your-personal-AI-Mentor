@@ -1,0 +1,52 @@
+{
+  "manifest_version": 3,
+  "name": "Your Personal Mentor",
+  "description": "Context-aware DSA mentor that nudges you forward without handing over the full answer.",
+  "version": "1.0.0",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://*.leetcode.com/*"
+  ],
+  "action": {
+    "default_title": "Your Personal Mentor",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/*",
+        "https://*.leetcode.com/*"
+      ],
+      "js": ["scripts/content-script.js"],
+      "css": ["styles/inpage.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "panel.html",
+        "styles/panel.css",
+        "scripts/panel.js"
+      ],
+      "matches": [
+        "https://leetcode.com/*",
+        "https://*.leetcode.com/*"
+      ]
+    }
+  ]
+}
