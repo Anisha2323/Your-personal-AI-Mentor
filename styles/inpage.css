@@ -1,0 +1,79 @@
+.ypm-launcher-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483646;
+  background: linear-gradient(135deg, #fdd66c, #ffb347);
+  color: #0c2b4e;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 12px 24px rgba(15, 30, 50, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.ypm-launcher-btn::before {
+  content: "★";
+  font-size: 12px;
+}
+
+.ypm-launcher-btn:focus-visible {
+  outline: 3px solid #0c2b4e;
+  outline-offset: 2px;
+}
+
+.ypm-panel-frame {
+  position: fixed;
+  bottom: 94px;
+  right: 24px;
+  width: min(420px, calc(100vw - 32px));
+  height: min(580px, calc(100vh - 140px));
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 24px 48px rgba(10, 24, 51, 0.35);
+  z-index: 2147483646;
+  background: transparent;
+  display: none;
+}
+
+.ypm-panel-frame.ypm-open {
+  display: block;
+  animation: ypm-pop 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ypm-tooltip {
+  position: absolute;
+  bottom: 110%;
+  right: 0;
+  background: #0c2b4e;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.ypm-tooltip.ypm-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes ypm-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

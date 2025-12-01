@@ -1,0 +1,45 @@
+.ypm-popup {
+  min-width: 320px;
+  max-width: 360px;
+  padding: 16px;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0c2b4e;
+}
+
+.ypm-popup h1 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.ypm-popup-status,
+.ypm-popup-actions {
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(12, 43, 78, 0.1);
+  background: rgba(12, 43, 78, 0.02);
+}
+
+.ypm-popup button {
+  width: 100%;
+  margin-top: 8px;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffd666, #ffb347);
+  color: #0c2b4e;
+}
+
+#refresh-panel {
+  background: #0c2b4e;
+  color: #fff;
+}
+
+.ypm-popup-tip {
+  font-size: 13px;
+  color: rgba(12, 43, 78, 0.75);
+}
