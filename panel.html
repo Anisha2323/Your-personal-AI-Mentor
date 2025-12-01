@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Personal Mentor Panel</title>
+    <link rel="stylesheet" href="styles/panel.css" />
+  </head>
+  <body>
+    <div class="ypm-panel-shell">
+      <header class="ypm-panel-header">
+        <div>
+          <p class="ypm-title">Your Personal Mentor</p>
+          <p class="ypm-subtitle">Guiding you through DSA problems, one hint at a time.</p>
+          <span class="ypm-badge" data-status>Hint mode</span>
+        </div>
+        <button class="ypm-close-btn" title="Hide mentor" aria-label="Hide mentor">×</button>
+      </header>
+
+      <form class="ypm-form" id="mentor-form">
+        <div class="ypm-field">
+          <label for="stage">Where are you stuck?</label>
+          <select id="stage" name="stage" required>
+            <option value="understand">Clarifying the prompt</option>
+            <option value="approach">Shaping a direction</option>
+            <option value="validate">Validating an approach</option>
+            <option value="optimize">Optimizing or analyzing complexity</option>
+          </select>
+        </div>
+
+        <div class="ypm-field">
+          <label for="progress">What have you reasoned so far?</label>
+          <textarea id="progress" name="progress" placeholder="Summarize your current thinking or partial solution." required></textarea>
+        </div>
+
+        <div class="ypm-field">
+          <label for="constraints">Key inputs, constraints, or edge cases</label>
+          <textarea id="constraints" name="constraints" placeholder="e.g. n up to 1e5, array sorted, extra memory limited"></textarea>
+        </div>
+
+        <div class="ypm-field">
+          <label>How heavy should the hint be?</label>
+          <div class="ypm-hint-levels" role="radiogroup">
+            <label class="ypm-pill ypm-pill-active">
+              <input type="radio" name="hintDepth" value="nudge" checked />
+              Tiny nudge
+            </label>
+            <label class="ypm-pill">
+              <input type="radio" name="hintDepth" value="scaffold" />
+              Step breakdown
+            </label>
+            <label class="ypm-pill">
+              <input type="radio" name="hintDepth" value="review" />
+              Sanity check
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="ypm-submit">Generate next hint</button>
+        <div class="ypm-key-warning" hidden>
+          Add your Gemini API key in the extension options to unlock live AI hints.
+        </div>
+      </form>
+
+      <section class="ypm-thread" id="mentor-thread" aria-live="polite">
+        <p class="ypm-empty-state">Describe where you're stuck and I'll nudge you forward without spoiling the complete answer.</p>
+      </section>
+
+      <div class="ypm-loading" hidden>
+        <span class="ypm-spinner"></span>
+        Crafting a hint with a little genius...
+      </div>
+    </div>
+
+    <script type="module" src="scripts/panel.js"></script>
+  </body>
+</html>
